@@ -7,7 +7,7 @@ import Button from '../Button';
 export class Chat extends Component {
 
   static propTypes = {
-    interlocutor: PropTypes.object.isRequired,
+    interlocutor: PropTypes.object,
     currentUser: PropTypes.object,
   }
 
@@ -43,7 +43,7 @@ export class Chat extends Component {
     return messages.map((m,i) => (
       <div 
         key={i} 
-        className={`chat-message ${ m.sender === currentUser.username ? '__right' : ''}`}>
+        className={`chat-message ${ m.sender === currentUser.username ? '__other-person' : ''}`}>
         <div className='chat-message-username'>
           {m.sender}
         </div>
@@ -56,7 +56,7 @@ export class Chat extends Component {
 
   render() {
     const { message } = this.state;
-    const { interlocutor: { username } } = this.props;
+    const { username, interlocutor } = this.props;
     return (
       <div className='chat'>
         <div className='chat-top'>
@@ -65,7 +65,12 @@ export class Chat extends Component {
           </div>
         </div>
         <div className='chat-body'>
-          {this.renderMessages()}
+          {interlocutor && this.renderMessages()}
+          {!interlocutor && 
+            <div className='text-info'>
+              Пользователь вышел из сети
+            </div>
+          }
         </div>
         <div className='chat-bottom'>
           <textarea 

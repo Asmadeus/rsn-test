@@ -1,6 +1,16 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 
+const SHOW_LENGTH = 30;
+
+const renderMessage = (message) => {
+  if (message.length > SHOW_LENGTH) {
+    return message.slice(0, SHOW_LENGTH) + '...';
+  } else {
+    return message;
+  }
+}
+
 const MessageItem = ({
   username,
   list = [],
@@ -19,7 +29,7 @@ const MessageItem = ({
         </div>
         <div className='messages-item-info-subtitle'>
           {currentUser.username === last.sender ? 'Вы: ' : ''}
-          {last.message}
+          {renderMessage(last.message)}
         </div>
       </div>
     </div>

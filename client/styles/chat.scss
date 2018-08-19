@@ -12,11 +12,15 @@
   &-body {
     padding: 20px;
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
   }
   &-bottom {
     border-top: 1px solid #e7e8ec;
     padding: 20px 15px;
     display: flex;
+    flex-shrink: 0;
     .message-area {
       resize: none;
       border: none;
@@ -27,6 +31,10 @@
   }
   &-message {
     max-width: 60%;
+    background-color: #e2f7ff;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 10px 20px;
     &-username {
       font-size: 18px;
       color: #42648b;
@@ -34,9 +42,9 @@
     &-text {
 
     }
-    &.__right {
+    &.__other-person {
       margin-left: auto;
-      text-align: right;
+      background-color: #c9f3c2;
     }
   }
 }
