@@ -42,7 +42,7 @@ describe('<Chat />', () => {
     const currentUser = { username: 'user1' };
     const interlocutor = { username: 'user2' };
 
-    const { wrapper } = setup({ socket, currentUser, interlocutor });
+    const { wrapper } = setup({ socket, currentUser, interlocutor, username: 'user2' });
     wrapper.setState({message: 'hello'});
 
     wrapper.find('Button').simulate('click');
