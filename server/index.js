@@ -3,6 +3,8 @@ const express = require("express");
 
 const app = express();
 
+import { renderPage } from './renderPage';
+
 const devMode = process.env.NODE_ENV === 'development';
 
 if (devMode) {
@@ -18,9 +20,10 @@ if (devMode) {
 }
 
 app.use(express.static(path.resolve(__dirname, '../static')));
+app.use(express.static(path.resolve(__dirname, '../dist/client')));
 
 app.get('/', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../dist/index.html'))
+  res.send(renderPage());
 });
 
 const server = require('http').createServer(app);
