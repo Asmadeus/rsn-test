@@ -28,11 +28,11 @@ export class Chat extends Component {
 
   sendMessage = () => {
     if (!this.state.message.trim()) return;
-    const { interlocutor, socket, currentUser } = this.props;
+    const { username, socket, currentUser } = this.props;
     const { message } = this.state;
     socket.emit('message', {
       sender: currentUser.username,
-      receiver: interlocutor.username,
+      receiver: username,
       message
     })
     this.setState({message: ''})
@@ -65,10 +65,10 @@ export class Chat extends Component {
           </div>
         </div>
         <div className='chat-body'>
-          {interlocutor && this.renderMessages()}
+          {this.renderMessages()}
           {!interlocutor && 
             <div className='text-info'>
-              Пользователь вышел из сети
+              Пользователь не в сети
             </div>
           }
         </div>

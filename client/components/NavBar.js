@@ -12,7 +12,7 @@ const NavBar = ({ authorized, toggleMenu }) => {
             <span></span>
           </div>
         }
-        <div className='navbar-logo'>SN</div>
+        <div className='navbar-logo'>RSN</div>
       </div>
     </div>
   )
