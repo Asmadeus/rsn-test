@@ -13,6 +13,7 @@
     background-color: $page-bg;
     z-index: 20;
     transition: .4s left;
+    flex-shrink: 0;
     &.__open {
       left: 0;
     }
