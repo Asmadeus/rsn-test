@@ -1,0 +1,36 @@
+.users {
+  &-list {
+    background-color: white;
+  }
+
+  &-item {
+    cursor: pointer;
+    padding: 10px 15px;
+    display: flex;
+    border-bottom: 1px solid #e7e8ec;
+    &:hover {
+      background-color: $hover-light;
+    }
+    &-img {
+      width: 88px;
+      height: 60px;
+      margin-right: 20px;
+    }
+    &-title {
+      font-size: 20px;
+    }
+    &-info {
+      flex-grow: 1;
+    }
+    &-controls {
+      margin-top: 15px;
+    }
+    &-link {
+      color: #285473;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

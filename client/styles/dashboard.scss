@@ -1,0 +1,68 @@
+.dashboard {
+  display: flex;
+  height: calc(100vh - 48px);
+  position: relative;
+
+  &-sidebar {
+    width: 280px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -280px;
+    bottom: 0;
+    background-color: $page-bg;
+    z-index: 20;
+    transition: .4s left;
+    &.__open {
+      left: 0;
+    }
+
+    .menu {
+      &-item {
+        cursor: pointer;
+        color: #285473;
+        font-size: 16px;
+        padding: 11px 9px 11px 12px;
+        border-bottom: 1px solid $light-gray;
+        font-weight: bold;
+        &:hover, &.__active {
+          background-color: #fafafa;
+        }
+      }
+    }
+  }
+
+  &-content {
+    margin-left: auto;
+    flex-grow: 1;
+    background-color: white;
+  }
+
+  &-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 10;
+  }  
+}
+
+@media (min-width: $medium) {
+  .dashboard {
+    &-sidebar {
+      position: relative;
+      left: 0;
+    }
+
+    &-content {
+      border-left: 1px solid $light-gray;
+      border-right: 1px solid $light-gray;
+    }
+
+    &-overlay {
+      display: none;
+    }
+  } 
+}

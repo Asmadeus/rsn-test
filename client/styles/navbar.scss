@@ -1,0 +1,44 @@
+.navbar {
+  height: 48px;
+  background-color: #5181b8;
+  
+  &-logo {
+    cursor: pointer;
+    display: inline-block;
+    background-image: url('/images/logo.png');
+    height: 48px;
+    width: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-left: 50px;
+    line-height: 48px;
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+    vertical-align: top;
+  }
+
+  &-toggle {
+    display: inline-block;
+    padding: 16px 12px;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    span {
+      display: block;
+      height: 2px;
+      background-color: white;
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+@media (min-width: $medium) {
+  .navbar {
+    &-toggle {
+      display: none;
+    }
+  }
+}

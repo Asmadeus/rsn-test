@@ -1,0 +1,22 @@
+.input, .button {
+  border-radius: 4px;
+  border: 1px solid #caced4;
+  padding: 9px 10px 11px;
+  &.__block {
+    width: 100%;
+  }
+}
+
+.input {
+  
+}
+
+.button {
+  cursor: pointer;
+  font-size: 16px;
+  &.__primary {
+    background-color: #5181b8;
+    color: white;
+    border-color: #5181b8;
+  }
+}

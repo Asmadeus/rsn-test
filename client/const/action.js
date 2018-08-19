@@ -1,0 +1,3 @@
+export const UPDATE_USERS = 'UPDATE_USERS';
+export const CURRENT_USER = 'CURRENT_USER';
+export const RECEIVE_MESSAGE = 'RECEIVE_MESSAGE';
