@@ -14,11 +14,16 @@ class UsersContainer extends Component {
   }
 
   renderUserList = () => {
-    return this.props.users
-      .filter(user => user.username !== this.props.currentUser.username)
-      .map((user, i) => (
-        <UserItem key={i} switchTab={this.props.switchTab} {...user} />
-      ))
+    const {users, currentUser} = this.props;
+    const otherUsers = users.filter(user => user.username !== currentUser.username);
+    if (!otherUsers.length) return (
+      <div className='text-info'>
+        Пользователей в сети нет.
+      </div>
+    )
+    return otherUsers.map((user, i) => (
+      <UserItem key={i} switchTab={this.props.switchTab} {...user} />
+    ))
   }
 
   render() {

@@ -15,6 +15,12 @@ class Messages extends Component {
 
   renderMessages = () => {
     const { messages, currentUser, switchTab } = this.props;
+    if (!Object.keys(messages).length) return (
+      <div className='text-info'>
+        Список сообщений пуст. Выберите собеседника на странице "Пользователи".
+      </div>
+    );
+
     let messagesEl = [];
     Object.keys(messages).forEach((key) => {
       messagesEl.push(
