@@ -5,7 +5,7 @@ import Sidebar from "./Sidebar";
 import Content from "./Content";
 
 import { 
-  USERS_TAB,
+  PROFILE_TAB,
 } from '../../const/common';
 
 
@@ -18,7 +18,7 @@ class Dashboard extends Component {
   }
 
   state = {
-    tab: USERS_TAB,
+    tab: PROFILE_TAB,
     tabProps: {}
   }
 
