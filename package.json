@@ -3,14 +3,17 @@
   "version": "1.0.0",
   "description": "Starter template for React, React Router, Redux, Express with hot reload",
   "scripts": {
-    "start": "cross-env BABEL_DISABLE_CACHE=1 NODE_ENV=development node index.js",
+    "start:dev": "cross-env BABEL_DISABLE_CACHE=1 NODE_ENV=development node index.js",
     "build:server": "cross-env NODE_ENV=production webpack --config webpack.config.server.js",
     "build:client": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
     "build": "npm run clean && npm run build:client && npm run build:server",
     "clean": "rimraf dist",
-    "start:prod": "cross-env NODE_ENV=production node index.js",
+    "start": "cross-env NODE_ENV=production node index.js",
     "test": "jest",
     "test:watch": "jest --notify --watch"
+  },
+  "engines": {
+    "node": "8.11.3"
   },
   "license": "MIT",
   "repository": {
